@@ -42,7 +42,8 @@ class Tx_Aloha_Utility_Access {
 		// this is the only way how to temporarly turn on/off the editor
 		if (isset($GLOBALS['BE_USER'])
 				&& $GLOBALS['BE_USER']->userTS['aloha'] == 1
-				&& $GLOBALS['TSFE']->config['config']['aloha'] == 1
+				&& ($GLOBALS['TSFE']->config['config']['aloha'] == 1
+					|| $GLOBALS['TSFE']->config['page']['config']['aloha'] == 1)
 				) {
 			// Defaultly allow aloha, only disable if user sets so
 			if (!isset($GLOBALS['BE_USER']->uc['TSFE_adminConfig']['aloha'])) {
